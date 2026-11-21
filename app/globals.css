@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #070b14;
+  --ink-2: #0f1524;
+  --gold: #f7be3a;
+  --gold-dark: #d99a12;
+  --gold-light: #fbe3a6;
+  --gold-ink: #8a6100; /* gold for small text on paper (AA contrast) */
+  --paper: #f5f0e6;
+  --paper-2: #ece4d4;
+  --jungle: #1e3a2f;
+  --text: #0b0f1a;
+  --text-2: #4a4f5c;
+  --line: rgb(11 15 26 / 0.12);
+  --line-dark: rgb(255 255 255 / 0.14);
+  --success: #2f7d4f;
+  --error: #c2412d;
+
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section: clamp(5rem, 11vw, 10rem);
+  --header-h: 5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-light: var(--gold-light);
+  --color-gold-ink: var(--gold-ink);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-jungle: var(--jungle);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-line: var(--line);
+  --color-line-dark: var(--line-dark);
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  --font-sans: var(--font-lexend);
+  --font-serif: var(--font-instrument);
+
+  --text-display: clamp(3.25rem, 9vw, 8.5rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.045em;
+  --text-h1: clamp(2.75rem, 6.5vw, 5.25rem);
+  --text-h1--line-height: 0.98;
+  --text-h1--letter-spacing: -0.04em;
+  --text-h2: clamp(2.1rem, 4.4vw, 3.6rem);
+  --text-h2--line-height: 1.02;
+  --text-h2--letter-spacing: -0.035em;
+  --text-h3: clamp(1.35rem, 2vw, 1.75rem);
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.02em;
+  --text-lede: clamp(1.15rem, 1.6vw, 1.4rem);
+  --text-lede--line-height: 1.5;
+  --text-label: 0.75rem;
+  --text-label--letter-spacing: 0.16em;
+
+  --breakpoint-xs: 26rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-lexend), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-weight: 350;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@utility container-x {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility section-y {
+  padding-block: var(--section);
+}
+
+@utility label {
+  font-size: var(--text-label);
+  letter-spacing: var(--text-label--letter-spacing);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility serif-accent {
+  font-family: var(--font-instrument), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
