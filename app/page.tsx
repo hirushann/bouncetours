@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative flex min-h-svh flex-col justify-end overflow-hidden bg-ink text-white">
+      <section className="relative flex min-h-lvh flex-col justify-end overflow-hidden bg-ink text-white">
         <Image
           src={img.sigiriyaDawn.src}
           alt={img.sigiriyaDawn.alt}
@@ -39,12 +39,12 @@ export default function Home() {
           quality={70}
           className="object-cover object-[50%_60%]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(7_11_20/0.6)_0%,rgb(7_11_20/0)_30%,rgb(7_11_20/0.25)_55%,rgb(7_11_20/0.92)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(7_11_20/0.6)_0%,rgb(7_11_20/0.3)_30%,rgb(7_11_20/0.35)_55%,rgb(7_11_20/0.92)_100%)]" />
 
-        <Ring className="absolute right-(--gutter) top-24 w-20 text-white sm:top-28 sm:w-28 md:top-32 md:w-44 xl:w-52" />
+        <Ring className="absolute right-(--gutter) top-32 hidden w-44 text-white md:block xl:w-52" />
 
-        <div className="container-x relative pb-8 pt-40 md:pb-10">
-          <p className="label mb-6 text-gold">Small-group &amp; tailor-made tours · Sri Lanka</p>
+        <div className="container-x relative pb-[calc(env(safe-area-inset-bottom)+5.5rem)] pt-40 md:pb-10">
+          <Eyebrow className="mb-6 text-white [text-shadow:0_1px_10px_rgb(7_11_20/0.7)]">Small-group &amp; tailor-made tours · Sri Lanka</Eyebrow>
           <HeroTitle
             className="text-display font-semibold"
             lines={[

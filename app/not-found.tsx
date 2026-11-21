@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Page not found" };
 
 export default function NotFound() {
   return (
-    <section className="relative flex min-h-svh items-center overflow-hidden bg-ink pt-(--header-h) text-white">
-      <Ring mark={false} className="pointer-events-none absolute -right-40 top-1/2 w-[28rem] -translate-y-1/2 text-white/15 md:-right-20 md:w-[36rem] md:text-white/30" />
+    <section className="relative flex min-h-lvh items-center overflow-hidden bg-ink pt-(--header-h) text-white">
+      <Ring mark={false} className="pointer-events-none absolute -right-20 top-1/2 hidden -translate-y-1/2 md:block md:w-[36rem] md:text-white/30" />
       <div className="container-x relative">
         <p className="label text-gold">Error 404</p>
         <h1 className="mt-5 max-w-3xl text-h1 font-semibold">

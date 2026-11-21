@@ -29,7 +29,8 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
-export const viewport: Viewport = { themeColor: "#070b14" };
+// viewport-fit=cover lets the dark hero run edge to edge on iPhone; the header pads for the notch.
+export const viewport: Viewport = { viewportFit: "cover" };
 
 const orgJsonLd = {
   "@context": "https://schema.org",

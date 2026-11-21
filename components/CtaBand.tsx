@@ -14,7 +14,7 @@ export function CtaBand({
 }) {
   return (
     <section className="relative overflow-hidden bg-gold text-ink">
-      <Ring mark={false} className="pointer-events-none absolute -right-24 -top-24 w-[26rem] text-ink opacity-90 md:-right-10 md:top-1/2 md:w-[30rem] md:-translate-y-1/2" />
+      <Ring mark={false} className="pointer-events-none absolute hidden text-ink opacity-90 md:block md:-right-10 md:top-1/2 md:w-[30rem] md:-translate-y-1/2" />
       <div className="container-x relative py-24 md:py-32">
         <h2 className="max-w-3xl text-[clamp(2.6rem,6vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.045em]">{title}</h2>
         <p className="mt-6 max-w-xl text-lede text-ink/75">{body}</p>

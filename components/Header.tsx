@@ -60,7 +60,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 text-white transition-colors duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] text-white transition-colors duration-500 ${
         solid ? "bg-ink/95 shadow-[0_1px_0_var(--line-dark)]" : "bg-transparent"
       }`}
     >
@@ -112,7 +112,7 @@ export function Header() {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-x-0 bottom-0 top-(--header-h) overflow-y-auto bg-ink lg:hidden"
+            className="fixed inset-x-0 bottom-0 top-[calc(var(--header-h)+env(safe-area-inset-top))] overflow-y-auto bg-ink lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
